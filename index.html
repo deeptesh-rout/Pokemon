@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        height: 100vh;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        background-image: url("assets/background-art.jpeg");
+        background-size: cover;
+        background-position: center;
+      }
+
+      canvas {
+        max-width: 100%;
+        object-fit: contain;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="game"></canvas>
+    <script src="p5.min.js"></script>
+    <script>
+      // prevent itch.io scrolling
+      window.addEventListener("keydown", (e) => {
+        if (
+          ["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight", " "].includes(
+            e.key
+          )
+        ) {
+          e.preventDefault();
+        }
+      });
+    </script>
+    <script type="module" src="main.js"></script>
+  </body>
+</html>
